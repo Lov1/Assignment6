@@ -1,0 +1,70 @@
+ /*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 29, 2017, 8:25:02 PM
+    Author     : lovinadelph
+*/
+
+ /*---- Creating button designs---*/
+
+
+
+#btnGet, #btnAdd, #btnAdd1, #btnGenerate{
+    background-color: lightcoral;
+    border-radius: 12px;
+    
+}
+
+ #btnGenerate:hover {
+     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#btnAdd1:hover {
+     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#btnAdd:hover {
+     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#btnGet:hover {
+     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#slider,#slider1,#slider2,#slider3,#slider4,#slider5,#slider6,#slider7,#slider8 {
+    width: 35%;
+}
+
+/* --- This is where I designed the body ---*/
+body{
+    padding: 10px;
+    margin: auto;
+   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
+}
+
+/* --- This is where I designed my text boxes ----*/
+input[type=number], select {
+    width: 25%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr {
+    background-color: #dddddd;
+}

@@ -1,0 +1,1287 @@
+<!--
+Name: Lovina Delph, lovina_delph@student.uml.edu
+Affiliation: Computer Science - Undergraduate, UMass Lowell 
+Subject: Comp.4610, GUI Programming I 
+File: /usr/cs/2017/ldelph/public_html/assn3.html
+Created: 03/Dec/2017
+Last updated by LD: - 03/Dec/2017
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Assignment </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  
+  <link rel="stylesheet" href="newcss.css">  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+  
+  
+  
+ 
+  
+          
+ 
+</head>
+<body>
+    <div id="tabs">  
+        <ul>
+    <li><a href="#tabs-1">Params</a></li>
+    <li><a href="#tabs-2">Additional Features</a></li>
+        </ul>
+        
+        
+  <div id="tabs-1">
+            
+            
+ <form id="myform">
+
+       <div class="container-fluid text-center">
+           <div class="row content">
+              
+               
+       <div class="col-sm-12 text-left">
+           <h1> Compare Car Costs! </h1>
+           <h6> Make the best choice when buying your car. </h6>
+           <hr>
+    <div class="col-sm-6 text-left">
+      <label>MSRP1:</label>
+      <input class="s" type ="number" id="msrp1" name="msrp1" onchange ="updateTable()" > <br>
+         <div id="slider"></div> 
+  
+      
+      <label>MSRP2:</label>
+      <input class="s1" type ="number" id="msrp2" name="msrp2" onchange ="updateTable()"> <br>
+         <div id ="slider1"></div>
+      
+      <label>MSRP3:</label>
+        <input class="s2" type ="number" id="msrp3" name="msrp3" onchange ="updateTable()"> <br>
+         <div id ="slider2"></div>
+      
+      <label>MSRP4:</label>
+        <input class="s3" type ="number" id="msrp4" name="msrp4" onchange ="updateTable()"> <br>
+         <div id ="slider3"></div>
+           <br>
+             <br/>
+      </div>
+       <div class= "col-sm-6" id="TextBoxContainer">
+      </div>
+         
+       <div class="col-sm-6 text-left">
+       <label>MPG1:</label> <input class="s4" type ="number" id="mpg1" name="mpg1" onchange =" updateTable()"> <br>
+        <div id="slider4"></div>
+       <label>MPG2:</label><input class="s5" type ="number" id="mpg2" name="mpg2" onchange =" updateTable()"> <br>
+        <div id="slider5"></div>
+       <label>MPG3:</label><input class="s6" type ="number" id="mpg3" name="mpg3" onchange =" updateTable()"> <br>
+        <div id="slider6"></div>
+       <label>MPG4:</label><input class="s7" type ="number" id="mpg4" name="mpg4" onchange =" updateTable()"> <br>
+        <div id="slider7"></div>
+         <br>
+          <br />
+       </div>
+    </div>
+
+      <div class="col-sm-8 text-left"> 
+          <div class="well">
+              
+          <label>Gas: </label>
+          <input  class="s8" type ="number" id="gasvalue" name="gasvalue" onchange =" updateTable()"> <br>
+           <div id="slider8"></div>
+         
+            
+          <label>Months:</label>
+          <input class="s9" type ="number" id="month_value" name="months" onchange =" updateTable()"><br>
+           <div id="slider9"></div>
+           
+          <label>Down Payment: </label>
+          <input class="s10" type ="number" id="down_payment" name="downpayment" onchange =" updateTable()"> <br>
+           <div id="slider10"></div>
+          
+          <label>Interest: </label>
+          <input class="s11" type ="number" id="interest_value" name="interest" onchange =" updateTable()"> <br>
+           <div id="slider11"></div>
+          
+          <label>Miles driven per year: </label>
+          <input class="s12" type ="number" id="mp_year" name="miles" onchange =" updateTable()"> <br>
+           <div id="slider12"></div>
+          
+          <label>Rebate: </label>
+          <input class="s13" type ="number" id="add_discounts" name="rebate" onchange =" updateTable()"> <br> <br>
+           <div id="slider13"></div>     
+ 
+           <br>
+         <input id="btnGet" type="submit" value="Create Tab" /> 
+         <br>
+         <br>
+        
+     <hr />
+          </div> 
+        </div>    
+      </div>
+   </div>
+          
+
+ <div id ="fragment-3">
+ <table>
+  <tr>
+    <th>Mpg Values</th>
+    <th id="car_val_1">Price 1</th>
+    <th id="car_val_2">Price 2</th>
+    <th id="car_val_3">Price 3</th>
+    <th id="car_val_4">Price 4</th>
+  </tr>
+  <tr>
+    <td id="mpg1">Mpg1</td>
+    <td id="c0p0"></td>
+    <td id="c0p1"></td>
+    <td id="c0p2"></td>
+    <td id="c0p3"></td>
+  </tr>
+  <tr>
+    <td id="mpg2">Mpg2</td>
+    <td id="c1p0"></td>
+    <td id="c1p1"></td>
+    <td id="c1p2"></td>
+    <td id="c1p3"></td>
+  <tr>
+    <td id="mpg3">Mpg3</td>
+    <td id="c2p0"></td>
+    <td id="c2p1"></td>
+    <td id="c2p2"></td>
+    <td id="c2p3"></td>
+  </tr>
+  <tr>
+    <td id="mpg4">Mpg4</td>
+    <td id="c3p0"></td>
+    <td id="c3p1"></td>
+    <td id="c3p2"></td>
+    <td id="c3p3"></td>
+   </tr>
+  </table>
+ </div>
+ </form>
+ </div>
+      <div class="col-md-1">
+                <input class="form-control"  id = "indexValue">
+            </div>
+       <input type='button' id='removeTab' value='Remove Tab'>
+     
+            
+    <form id ="myform2"> 
+        
+      <div id="tabs-2"> 
+           <label> Additional Features </label> <br>
+       
+      <hr>
+      <h3> Maintenance and Repair cost </h3>
+      
+      <div class="col-xs-2 text-left">
+      <label>Car1:</label> <input type ="number" id="car1" name="car1" onchange =" updateTable2()" style="width:200px  "> 
+      </div> 
+      <div class="col-xs-2 text-left">
+       <label>Car2:</label><input type ="number" id="car2" name="car2" onchange =" updateTable2()" style="width:200px"> 
+      </div>
+      <div class="col-xs-2 text-left">
+       <label>Car3:</label><input  type ="number" id="car3" name="car3" onchange =" updateTable2()" style="width:200px"> 
+      </div>
+      <div class="col-xs-2 text-left">
+       <label>Car4:</label><input  type ="number" id="car4" name="car4" onchange =" updateTable2()" style="width:200px"> <br>
+      </div>
+      <br> <br> <br> <br> <br> <br> <br> <br> <br> 
+      
+      <h3> Registration, fees taxes and miscellaneous </h3>
+      
+      <div class="col-xs-2 text-left">
+          <label>Car1:</label> <input type ="number" id="make1" name="make1" onchange =" updateTable2()" style="width:200px"> 
+      </div> 
+      <div class="col-xs-2 text-left">
+       <label>Car2:</label><input type ="number" id="make2" name="make2" onchange =" updateTable2()" style="width:200px"> 
+      </div>
+      <div class="col-xs-2 text-left">
+       <label>Car3:</label><input  type ="number" id="make3" name="make3" onchange =" updateTable2()" style="width:200px"> 
+      </div>
+      <div class="col-xs-2 text-left">
+       <label>Car4:</label><input  type ="number" id="make4" name="make4" onchange =" updateTable2()" style="width:200px"> <br>
+      </div>
+        
+      <br>
+      <br>
+      
+       
+      <div id ="fragment-2">
+ <table>
+  <tr>
+    <th>Mpg Values</th>
+    <th id="carval_1">Price 1</th>
+    <th id="carval_2">Price 2</th>
+    <th id="carval_3">Price 3</th>
+    <th id="carval_4">Price 4</th>
+  </tr>
+  <tr>
+    <td id="mpg1">Mpg1</td>
+    <td id="s0p0"></td>
+    <td id="s0p1"></td>
+    <td id="s0p2"></td>
+    <td id="s0p3"></td>
+  </tr>
+  <tr>
+    <td id="mpg2">Mpg2</td>
+    <td id="s1p0"></td>
+    <td id="s1p1"></td>
+    <td id="s1p2"></td>
+    <td id="s1p3"></td>
+  <tr>
+  <tr>
+    <td id="mpg3">Mpg2</td>
+    <td id="s1p0"></td>
+    <td id="s1p1"></td>
+    <td id="s1p2"></td>
+    <td id="s1p3"></td>
+  <tr>
+    <td id="mpg4">Mpg3</td>
+    <td id="s2p0"></td>
+    <td id="s2p1"></td>
+    <td id="s2p2"></td>
+    <td id="s2p3"></td>
+  </tr>
+  
+  </table>
+          <br>
+         <input id="btnGet" type="submit" value="Create Tab" /> 
+         <br>
+      </div>
+     
+          </form>  
+        
+  </div>
+           
+           
+ 
+
+
+
+
+<script>
+    
+ $(function(){
+     $("#tabs").tabs();
+ });
+ 
+ $("#removeTab").click(function(){
+        if ($( "li" ).size() >= 1){
+            var tabIndex = parseInt($("#indexValue").val(), 10);
+            if(tabIndex === 0) {
+                // void attempt to remove input field
+            }else{
+                $( "#tabs" ).find(".ui-tabs-nav li:eq(" + tabIndex + ")").remove();
+                $("#tabs").tabs("refresh");
+            }
+        }
+    });
+      
+  jQuery.validator.setDefaults({
+  debug: true,
+  success: "valid"
+});
+
+$("#myform2").validate({
+    rules: {
+     car1: {
+      required: true,
+      min: 5000,
+      max: 999999
+     },
+     car2: {
+      required: true,
+      min: 5000,
+      max: 999999
+     },
+     car3: {
+      required: true,
+      min: 5000,
+      max: 999999
+     },
+     car4: {
+      required: true,
+      min: 5000,
+      max: 999999
+     },
+     make1: {
+      required: true,
+      min: 1,
+      max: 50
+     },
+     make2: {
+      required: true,
+      min: 1,
+      max: 50
+      
+     },
+     make3: {
+      required: true,
+      min: 1,
+      max:50
+     },
+     make4: {
+      required: true,
+      min: 1,
+      max:50
+     }
+        },
+    messages: {
+     car1: {
+      required: "Please enter initial value of car one",
+      min: "Please enter value that is greater than $4999",
+      max: "Please enter your value that is $999999 or less"
+      
+     },
+     car2: {
+      required: "Please enter initial value of car two",
+      min: "Please enter value that is greater than $4999",
+      max: "Please enter your value that is $999999 or less"
+     },
+     car3: {
+      required: "Please enter initial value of car three",
+      min: "Please enter value that is greater than $4999",
+      max: "Please enter your value that is $999999 or less"
+     },
+     car4: {
+      required: "Please enter initial value of car four",
+      min: "Please enter value that is greater than $4999",
+      max: "Please enter your value that is $999999 or less"
+     },
+     make1: {
+      required: "Please enter your value for miles per gallon",
+      min: "Please enter your value that is greater than zero",
+      max: "Please enter your value that is fifty or less"
+     },
+     make2: {
+      required: "Please enter your value for miles per gallon",
+      min: "Please enter your value that is greater than zero",
+      max: "Please enter your value that is fifty or less"
+      
+     },
+     make3: {
+      required: "Please enter your value for miles per gallon",
+      min: "Please enter your value that is greater than zero",
+      max: "Please enter your value that is fifty or less"
+     },
+     make4: {
+      required: "Please enter your value for miles per gallon",
+      min: "Please enter your value that is greater than zero",
+      max: "Please enter your value that is fifty or less"
+     }
+   }
+ });
+ 
+ $("#myform").validate({
+    rules: {
+     msrp1: {
+      required: true,
+      min: 5000,
+      max: 999999
+     },
+     msrp2: {
+      required: true,
+      min: 5000,
+      max: 999999
+     },
+     msrp3: {
+      required: true,
+      min: 5000,
+      max: 999999
+     },
+     msrp4: {
+      required: true,
+      min: 5000,
+      max: 999999
+     },
+     mpg1: {
+      required: true,
+      min: 1,
+      max: 50
+     },
+     mpg2: {
+      required: true,
+      min: 1,
+      max: 50
+      
+     },
+     mpg3: {
+      required: true,
+      min: 1,
+      max:50
+     },
+     mpg4: {
+      required: true,
+      min: 1,
+      max:50
+     },
+    gasvalue: {
+      required: true,
+      min: 1,
+      max:20
+    },
+    months: {
+      required: true,
+      min: 1,
+      max:120
+    },
+    downpayment:{
+       required:true,
+       min: 1,
+       max:80
+    },
+    interest: {
+       required:true,
+       min:1,
+       max: 20
+    },
+    miles: {
+       required:true,
+       min:1000
+    },
+    rebate: {
+       required:true,
+       min:0,
+       max:5000
+      }
+      
+    
+        },
+    messages: {
+     msrp1: {
+      required: "Please enter initial value of car one",
+      min: "Please enter value that is greater than $4999",
+      max: "Please enter your value that is $999999 or less"
+      
+     },
+     msrp2: {
+      required: "Please enter initial value of car two",
+      min: "Please enter value that is greater than $4999",
+      max: "Please enter your value that is $999999 or less"
+     },
+     msrp3: {
+      required: "Please enter initial value of car three",
+      min: "Please enter value that is greater than $4999",
+      max: "Please enter your value that is $999999 or less"
+     },
+     msrp4: {
+      required: "Please enter initial value of car four",
+      min: "Please enter value that is greater than $4999",
+      max: "Please enter your value that is $999999 or less"
+     },
+     mpg1: {
+      required: "Please enter your value for miles per gallon",
+      min: "Please enter your value that is greater than zero",
+      max: "Please enter your value that is fifty or less"
+     },
+     mpg2: {
+      required: "Please enter your value for miles per gallon",
+      min: "Please enter your value that is greater than zero",
+      max: "Please enter your value that is fifty or less"
+      
+     },
+     mpg3: {
+      required: "Please enter your value for miles per gallon",
+      min: "Please enter your value that is greater than zero",
+      max: "Please enter your value that is fifty or less"
+     },
+     mpg4: {
+      required: "Please enter your value for miles per gallon",
+      min: "Please enter your value that is greater than zero",
+      max: "Please enter your value that is fifty or less"
+     },
+    gasvalue: {
+      required: "Please enter the price of gas in your state",
+      min: "Your value must be greater than zero"
+    },
+    months: {
+      required: "Please enter the months",
+      min: "Your value must be greater than zero",
+      max: "Your value must less than 120"
+    },
+    downpayment: {
+        required: "Please enter your downpayment value",
+        min: "Please enter a value greater than zero",
+        max: "Please enter a value less than 80"
+    },
+    interest:{
+        required: "Please enter a value for interest",
+        min:"Please enter a value that is greater than zero",
+        max:"Please enter a value that is less than 20"
+    }, 
+    miles: {
+        required: "Please enter a value for miles",
+        min:"Please enter a value greater than a 1000"
+    },
+    rebate: {
+        required: "Please enter a value for rebate",
+        min:"Invalid input",
+        max:"Please enter a value less than 5000"
+    }
+    
+   }
+ });
+ 
+ 
+ 
+ $('#myform').submit(function(evt) {
+        evt.preventDefault();
+        if( $('#myform').valid() ) {
+            add_table();
+        
+            var x=document.getElementById("submit");
+            x.disabled=true;
+            setTimeout(enable, 2000);
+            x.disabled=false;
+        
+        } else {
+        }
+    });
+ 
+$('#myform2').submit(function(evt) {
+        evt.preventDefault();
+        if( $('#myform').valid() ) {
+            add_table();
+        
+            var x=document.getElementById("submit");
+            x.disabled=true;
+            setTimeout(enable, 2000);
+            x.disabled=false;
+        
+        } else {
+        }
+    });
+ 
+
+
+
+
+
+
+
+
+
+
+  
+$(document).ready(function() {
+  
+    $("#slider").slider({
+    range: "min",
+    value: 0,
+    min: 5000,
+    max: 999999,
+    step: 0.01,
+    slide: function( event, ui ) {
+        $('.s').val( ui.value );
+        updateTable();
+    }  
+   });
+   
+  var initialValue = $("#slider").slider("option", "value");
+  $("#msrp1").val(initialValue);
+  $("#msrp1").change(function() {
+    var oldVal = $("#slider").slider("option", "value");
+    var newVal = $(this).val();
+    if (isNaN(newVal) || newVal < 0 || newVal > 999999) {
+      $("#msrp1").val(oldVal);
+    } else {
+      $("#slider").slider("option", "value", newVal);
+    }
+  });
+
+   
+   $("#slider1").slider({
+    range: "min",
+    value: 0,
+    step: 0.01,
+    min: 5000,
+    max: 999999,
+    slide: function( event, ui ) {
+        $( '.s1' ).val( ui.value );
+        updateTable();
+    }  
+   });
+   var initialValue = $("#slider1").slider("option", "value");
+  $("#msrp2").val(initialValue);
+  $("#msrp2").change(function() {
+    var oldVal = $("#slider1").slider("option", "value");
+    var newVal = $(this).val();
+    if (isNaN(newVal) || newVal < 0 || newVal > 999999) {
+      $("#msrp2").val(oldVal);
+    } else {
+      $("#slider1").slider("option", "value", newVal);
+    }
+  });
+   
+   $("#slider2").slider({
+    range: "min",
+    value: 0,
+    step: 0.01,
+    min: 5000,
+    max: 999999,
+    slide: function( event, ui ) {
+        $('.s2' ).val( ui.value );
+        updateTable();
+       
+    }  
+   });
+   var initialValue = $("#slider2").slider("option", "value");
+  $("#msrp3").val(initialValue);
+  $("#msrp3").change(function() {
+    var oldVal = $("#slider2").slider("option", "value");
+    var newVal = $(this).val();
+    if (isNaN(newVal) || newVal < 0 || newVal > 999999) {
+      $("#msrp3").val(oldVal);
+    } else {
+      $("#slider2").slider("option", "value", newVal);
+    }
+  });
+   
+   $("#slider3").slider({
+    range: "min",
+    value: 0,
+    step: 0.01,
+    min: 5000,
+    max: 999999,
+    slide: function( event, ui ) {
+        $( '.s3' ).val( ui.value );
+        updateTable();
+        
+    }  
+   });
+  var initialValue = $("#slider3").slider("option", "value");
+  $("#msrp4").val(initialValue);
+  $("#msrp4").change(function() {
+    var oldVal = $("#slider3").slider("option", "value");
+    var newVal = $(this).val();
+    if (isNaN(newVal) || newVal < 0 || newVal > 999999) {
+      $("#msrp4").val(oldVal);
+    } else {
+      $("#slider3").slider("option", "value", newVal);
+    }
+  });
+  
+    
+   $("#slider4").slider({
+    range: "min",
+    value: 0,
+    step: 0.01,
+    min: 1,
+    max: 50,
+    slide: function( event, ui ) {
+        $( '.s4' ).val( ui.value );
+        updateTable();
+        
+    }  
+   });
+  var initialValue = $("#slider4").slider("option", "value");
+  $("#mpg1").val(initialValue);
+  $("#mpg1").change(function() {
+    var oldVal = $("#slider4").slider("option", "value");
+    var newVal = $(this).val();
+    if (isNaN(newVal) || newVal < 0 || newVal > 50) {
+      $("#mpg1").val(oldVal);
+    } else {
+      $("#slider4").slider("option", "value", newVal);
+    }
+  });
+  
+  $("#slider5").slider({
+    range: "min",
+    value: 0,
+    step: 0.01,
+    min: 1,
+    max: 50,
+    slide: function( event, ui ) {
+       $( '.s5' ).val( ui.value );
+       updateTable();
+    }  
+   });
+  var initialValue = $("#slider5").slider("option", "value");
+  $("#mpg2").val(initialValue);
+  $("#mpg2").change(function() {
+    var oldVal = $("#slider5").slider("option", "value");
+    var newVal = $(this).val();
+    if (isNaN(newVal) || newVal < 0 || newVal > 50) {
+      $("#mpg2").val(oldVal);
+    } else {
+      $("#slider5").slider("option", "value", newVal);
+    }
+  });
+  
+  $("#slider6").slider({
+    range: "min",
+    value: 0,
+    step: 0.01,
+    min: 1,
+    max: 50,
+    slide: function( event, ui ) {
+        $( '.s6' ).val( ui.value );
+       updateTable();
+    }  
+    
+   });
+  var initialValue = $("#slider6").slider("option", "value");
+  $("#mpg3").val(initialValue);
+  $("#mpg3").change(function() {
+    var oldVal = $("#slider6").slider("option", "value");
+    var newVal = $(this).val();
+    if (isNaN(newVal) || newVal < 0 || newVal > 50) {
+      $("#mpg3").val(oldVal);
+    } else {
+      $("#slider6").slider("option", "value", newVal);
+    }
+  });
+    
+  $("#slider7").slider({
+    range: "min",
+    value: 0,
+    step: 0.01,
+    min: 1,
+    max: 50,
+    slide: function( event, ui ) {
+        $( '.s7' ).val( ui.value );
+        updateTable();
+    }  
+   });
+   
+  var initialValue = $("#slider7").slider("option", "value");
+  $("#mpg4").val(initialValue);
+  $("#mpg4").change(function() {
+    var oldVal = $("#slider7").slider("option", "value");
+    var newVal = $(this).val();
+    if (isNaN(newVal) || newVal < 0 || newVal > 50) {
+      $("#mpg4").val(oldVal);
+    } else {
+      $("#slider7").slider("option", "value", newVal);
+    }
+  });
+  
+  $("#slider8").slider({
+    range: "min",
+    value: 0,
+    step: 0.01,
+    min: 0,
+    max: 20,
+    slide: function( event, ui ) {
+        $( '.s8' ).val( ui.value );
+        updateTable();
+    }  
+   });
+    
+  var initialValue = $("#slider8").slider("option", "value");
+  $("#gasvalue").val(initialValue);
+  $("#gasvalue").change(function() {
+    var oldVal = $("#slider8").slider("option", "value");
+    var newVal = $(this).val();
+    if (isNaN(newVal) || newVal < 0 || newVal > 20) {
+      $("#gasvalue").val(oldVal);
+    } else {
+      $("#slider8").slider("option", "value", newVal);
+    }
+  });
+  
+  
+  $("#slider9").slider({
+    range: "min",
+    value: 0,
+    step: 1,
+    min: 0,
+    max: 120,
+    slide: function( event, ui ) {
+        $( '.s9' ).val( ui.value );
+       updateTable();
+    }  
+   });
+   
+  var initialValue = $("#slider9").slider("option", "value");
+  $("#month_value").val(initialValue);
+  $("#month_value").change(function() {
+    var oldVal = $("#slider9").slider("option", "value");
+    var newVal = $(this).val();
+    if (isNaN(newVal) || newVal < 0 || newVal > 120) {
+      $("#month_value").val(oldVal);
+    } else {
+      $("#slider9").slider("option", "value", newVal);
+    }
+  });
+  
+  $("#slider10").slider({
+    range: "min",
+    value: 0,
+    step: 1,
+    min: 0,
+    max: 80,
+    slide: function( event, ui ) {
+        $( '.s10' ).val( ui.value );
+      updateTable();
+    }  
+   });
+   
+  var initialValue = $("#slider10").slider("option", "value");
+  $("#down_payment").val(initialValue);
+  $("#down_payment").change(function() {
+    var oldVal = $("#slider10").slider("option", "value");
+    var newVal = $(this).val();
+    if (isNaN(newVal) || newVal < 0 || newVal > 999999) {
+      $("#down_payment").val(oldVal);
+    } else {
+      $("#slider10").slider("option", "value", newVal);
+    }
+    
+  });
+    $("#slider11").slider({
+    range: "min",
+    value: 0,
+    step: 1,
+    min: 1,
+    max: 20,
+    slide: function( event, ui ) {
+        $( '.s11' ).val( ui.value );
+       updateTable();
+    }  
+   });
+   
+  var initialValue = $("#slider11").slider("option", "value");
+  $("#interest_value").val(initialValue);
+  $("#interest_value").change(function() {
+    var oldVal = $("#slider11").slider("option", "value");
+    var newVal = $(this).val();
+    if (isNaN(newVal) || newVal < 0 || newVal > 20) {
+      $("#interest_value").val(oldVal);
+    } else {
+      $("#slider11").slider("option", "value", newVal);
+    }
+  });
+  
+    $("#slider12").slider({
+    range: "min",
+    value: 0,
+    step: 1,
+    min: 1000,
+    max: 999999,
+    slide: function( event, ui ) {
+        $( '.s12' ).val( ui.value );
+     updateTable();
+    }  
+   });
+   
+  var initialValue = $("#slider12").slider("option", "value");
+  $("#mp_year").val(initialValue);
+  $("#mp_year").change(function() {
+    var oldVal = $("#slider12").slider("option", "value");
+    var newVal = $(this).val();
+    if (isNaN(newVal) || newVal < 0 || newVal > 999999) {
+      $("#mp_year").val(oldVal);
+    } else {
+      $("#slider12").slider("option", "value", newVal);
+    }
+  });
+    
+   $("#slider13").slider({
+    range: "min",
+    value: 0,
+    step: 1,
+    min: 1,
+    max: 5000,
+    slide: function( event, ui ) {
+        $( '.s13' ).val( ui.value );
+        updateTable();
+    }  
+   });
+   
+  var initialValue = $("#slider13").slider("option", "value");
+  $("#add_discounts").val(initialValue);
+  $("#add_discounts").change(function() {
+    var oldVal = $("#slider13").slider("option", "value");
+    var newVal = $(this).val();
+    if (isNaN(newVal) || newVal < 0 || newVal > 5000) {
+      $("#add_discounts").val(oldVal);
+    } else {
+      $("#slider13").slider("option", "value", newVal);
+    }
+  });
+  
+  
+});
+  
+  
+    
+     
+    function updateTable() {
+        
+     
+      var arr = [];
+     var arr2 = []; 
+     
+     var cpm =[];
+     var cpmonth = [];
+     var i = 0;
+     var a; 
+     var b;
+     var c;
+     var d;
+     var e;
+     var f;
+        
+        a = document.getElementById("gasvalue").value;
+        b = document.getElementById("month_value").value;
+        c = document.getElementById("down_payment").value;
+        d = document.getElementById("interest_value").value; 
+        e = document.getElementById("mp_year").value;
+        f = document.getElementById("add_discounts").value;
+        
+
+       
+       var value1 = document.getElementById("msrp1").value;
+       var value2 = document.getElementById("msrp2").value;
+       var value3 = document.getElementById("msrp3").value;
+       var value4 = document.getElementById("msrp4").value;
+       
+       arr.push(value1);
+       arr.push(value2);
+       arr.push(value3);
+       arr.push(value4);
+       
+       
+       
+       var value5 = document.getElementById("mpg1").value;
+       var value6 = document.getElementById("mpg2").value;
+       var value7 = document.getElementById("mpg3").value;
+       var value8 = document.getElementById("mpg4").value;
+       
+       arr2.push(value5);
+       arr2.push(value6);
+       arr2.push(value7);
+       arr2.push(value8);
+       
+       
+       
+       function someFunction(arr, arr2) {
+           
+      var x = new Array(arr.length);
+        
+        for (var i =0; i < arr.length;i++ ){
+            x[i] = new Array(arr2.length);
+        }
+        
+        for(var i = 0; i < arr.length; i++){
+            for(var j = 0; j < arr2.length; j++){
+                
+                var msrp = arr[i];
+                var mpg = arr2[j];
+               
+                
+               var msrp = (msrp - f);
+               var down_payment = msrp *( c * 0.01);
+               var af_dp = msrp - down_payment;
+               
+               var cost_per_month = ((d*0.01/12) *af_dp)/(1-Math.pow(1 + d*0.01/12), -(b));
+               var cpmonth = cost_per_month + e/12/mpg * a;
+               var total_cost = cost_per_month * b;
+               var cpm = total_cost/e + a/mpg;
+               
+               cpm = cpm.toFixed(2);
+               cpmonth = cpmonth.toFixed(2); 
+               x[i][j] =  cpm + "," + cpmonth;
+               
+            }
+    
+        }
+        return x;
+      
+    }
+    
+    var temp_x = someFunction(arr,arr2);
+       
+      var j = 0;
+       
+      for(var i = 0; i < arr.length; i++){
+         for(j = 0; j < arr2.length; j++) {
+           document.getElementById("c" + i + "p"+ j).innerHTML = temp_x[i][j];
+           
+       }
+     } 
+     
+   
+        
+ 
+      
+ }
+ 
+ 
+ function updateTable2() {
+        
+     
+     var arr3 = [];
+     var arr4 = []; 
+     
+     var t_main =[];
+     var t_reg = [];
+     var i = 0;
+     var a; 
+     var b;
+     var c;
+     var d;
+     var e;
+     var f;
+        
+       var value1 = document.getElementById("car1").value;
+       var value2 = document.getElementById("car2").value;
+       var value3 = document.getElementById("car3").value;
+       var value4 = document.getElementById("car4").value;
+       
+       arr3.push(value1);
+       arr3.push(value2);
+       arr3.push(value3);
+       arr3.push(value4);
+       
+       
+       
+       var value5 = document.getElementById("make1").value;
+       var value6 = document.getElementById("make2").value;
+       var value7 = document.getElementById("make3").value;
+       var value8 = document.getElementById("make4").value;
+       
+       arr4.push(value5);
+       arr4.push(value6);
+       arr4.push(value7);
+       arr4.push(value8);
+       
+       
+       
+       function someFunction(arr3, arr4) {
+           
+      var y = new Array(arr3.length);
+        
+        for (var i =0; i < arr3.length;i++ ){
+            y[i] = new Array(arr4.length);
+        }
+        
+        for(var i = 0; i < arr3.length; i++){
+            for(var j = 0; j < arr4.length; j++){
+                
+                var  main = arr3[i];
+                var  reg = arr4[j];
+               
+                
+               
+               y[i][j] =  main + "," + reg;
+               
+            }
+    
+        }
+        return y;
+      
+    }
+    
+    var temp_x = someFunction(arr3,arr4);
+       
+      var j = 0;
+       
+      for(var i = 0; i < arr3.length; i++){
+         for(j = 0; j < arr4.length; j++) {
+           document.getElementById("s" + i + "p"+ j).innerHTML = temp_x[i][j];
+           
+       }
+     } 
+     
+   
+        
+ 
+      
+ }
+ 
+ function add_table(){
+      
+        
+        var tabs = $("#tabs").tabs();
+        var c0p0 = document.getElementById("c0p0").innerHTML;
+        var c0p1 = document.getElementById("c0p1").innerHTML;
+        var c0p2 = document.getElementById("c0p2").innerHTML;
+        var c0p3 = document.getElementById("c0p3").innerHTML;
+        
+        
+        var c1p0 = document.getElementById("c1p0").innerHTML;
+        var c1p1 = document.getElementById("c1p1").innerHTML;
+        var c1p2 = document.getElementById("c1p2").innerHTML;
+        var c1p3 = document.getElementById("c1p3").innerHTML;
+         
+        
+        var c2p0 = document.getElementById("c2p0").innerHTML;
+        var c2p1 = document.getElementById("c2p1").innerHTML;
+        var c2p2 = document.getElementById("c2p2").innerHTML;
+        var c2p3 = document.getElementById("c2p3").innerHTML;
+          
+        
+        var c3p0 = document.getElementById("c3p0").innerHTML;
+        var c3p1 = document.getElementById("c3p1").innerHTML;
+        var c3p2 = document.getElementById("c3p2").innerHTML;
+        var c3p3 = document.getElementById("c3p3").innerHTML;
+         
+        var ul = tabs.find("ul");
+        var current_idx = ul.find("li").length+1;
+        
+        
+        $("<li id = 'li_"+current_idx+"'><a href='#tabs-"+current_idx+"'>MSRP vs MPG</a></li>").appendTo(ul);
+        
+        /* Reference */
+        /* tab remove */
+        /* http://jsfiddle.net/k44Wk/1/ */
+        
+        tabs.append("<div id='tabs-"+current_idx+"'> \n\
+                           <table class=\"table table-hover\"> \n\
+                           <tr> \n\
+                                <th>MPG Values</th>\n\
+                                <th>Price1</th>\n\
+                                <th>Price3</th>\n\
+                                <th>Price4</th>\n\
+                                <th>Price1</th>\n\
+                            </tr>\n\
+                            <tr>\n\
+\n\                             <td> MPG 1</td>\n\
+                                <td>" + c0p0 + "</td>\n\
+                                <td>" + c0p1 + "</td>\n\
+                                <td>" + c0p2 + "</td>\n\
+                                <td>" + c0p3 + "</td>\n\
+                            </tr>\n\
+                            <tr>\n\
+                                <td>MPG 2</td>\n\
+                                <td>" + c1p0 + "</td>\n\
+                                <td>" + c1p1 + "</td>\n\
+                                <td>" + c1p2 + "</td>\n\
+                                <td>" + c1p3 + "</td>\n\
+                            </tr>\n\
+                            <tr>\n\
+                            <td>MPG3</td>\n\
+                                <td>" + c2p0 + "</td>\n\
+                                <td>" + c2p1 + "</td>\n\
+                                <td>" + c2p2 + "</td>\n\
+                                <td>" + c2p1 + "</td>\n\
+                            </tr>\n\
+                            <tr>\n\
+                              <td>  MPG4  </td>\n\
+                                <td>" + c3p0+ "</td>\n\
+                                <td>" + c3p1 + "</td>\n\
+                                <td>" + c3p2 + "</td>\n\
+                                <td>" + c3p3 + "</td>\n\
+                            </tr>\n\
+                        </table>\n\
+                        </div>");
+        tabs.tabs("refresh");
+        tabs.tabs("select", 1);
+    }
+   
+function add_table2(){
+      
+        
+        var tabs = $("#tabs").tabs();
+        var s0p0 = document.getElementById("s0p0").innerHTML;
+        var s0p1 = document.getElementById("s0p1").innerHTML;
+        var s0p2 = document.getElementById("s0p2").innerHTML;
+        var s0p3 = document.getElementById("s0p3").innerHTML;
+        
+        
+        var s1p0 = document.getElementById("s1p0").innerHTML;
+        var s1p1 = document.getElementById("s1p1").innerHTML;
+        var s1p2 = document.getElementById("s1p2").innerHTML;
+        var s1p3 = document.getElementById("s1p3").innerHTML;
+         
+        
+        var s2p0 = document.getElementById("s2p0").innerHTML;
+        var s2p1 = document.getElementById("s2p1").innerHTML;
+        var s2p2 = document.getElementById("s2p2").innerHTML;
+        var s2p3 = document.getElementById("c2p3").innerHTML;
+          
+        
+        var s3p0 = document.getElementById("s3p0").innerHTML;
+        var s3p1 = document.getElementById("s3p1").innerHTML;
+        var s3p2 = document.getElementById("s3p2").innerHTML;
+        var s3p3 = document.getElementById("s3p3").innerHTML;
+         
+        var ul = tabs.find("ul");
+        var current_idx = ul.find("li").length+1;
+        
+        
+        $("<li id = 'li_"+current_idx+"'><a href='#tabs-"+current_idx+"'>MSRP vs MPG</a></li>").appendTo(ul);
+        
+        /* Reference */
+        /* tab remove */
+        /* http://jsfiddle.net/k44Wk/1/ */
+        
+        tabs.append("<div id='tabs-"+current_idx+"'> \n\
+                           <table class=\"table table-hover\"> \n\
+                           <tr> \n\
+                                <th>MPG Values</th>\n\
+                                <th>Price1</th>\n\
+                                <th>Price3</th>\n\
+                                <th>Price4</th>\n\
+                                <th>Price1</th>\n\
+                            </tr>\n\
+                            <tr>\n\
+                             <td> MPG 1</td>\n\
+                                <td>" + s0p0 + "</td>\n\
+                                <td>" + s0p1 + "</td>\n\
+                                <td>" + s0p2 + "</td>\n\
+                                <td>" + s0p3 + "</td>\n\
+                            </tr>\n\
+                            <tr>\n\
+                                <td>MPG 2</td>\n\
+                                <td>" + s1p0 + "</td>\n\
+                                <td>" + s1p1 + "</td>\n\
+                                <td>" + s1p2 + "</td>\n\
+                                <td>" + s1p3 + "</td>\n\
+                            </tr>\n\
+                            <tr>\n\
+                            <td>MPG3</td>\n\
+                                <td>" + s2p0 + "</td>\n\
+                                <td>" + s2p1 + "</td>\n\
+                                <td>" + s2p2 + "</td>\n\
+                                <td>" + s2p1 + "</td>\n\
+                            </tr>\n\
+                            <tr>\n\
+                              <td>  MPG4  </td>\n\
+                                <td>" + s3p0+ "</td>\n\
+                                <td>" + s3p1 + "</td>\n\
+                                <td>" + s3p2 + "</td>\n\
+                                <td>" + s3p3 + "</td>\n\
+                            </tr>\n\
+                        </table>\n\
+                        </div>");
+        tabs.tabs("refresh");
+        tabs.tabs("select", 1);
+    }
+   
+
+   
+    
+   /** function calc(){
+        
+      var temp_x = someFunction(arr,arr2);
+       
+      var j = 0;
+       
+      for(var i = 0; i < arr.length; i++){
+         for(j = 0; j < arr2.length; j++) {
+           document.getElementById("c" + i + "p"+ j).innerHTML = temp_x[i][j];
+           
+       }
+     } 
+     
+      /**  
+   }**/
+  </script>
+ 
+</body>
+</html>
+
